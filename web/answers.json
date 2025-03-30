@@ -1,0 +1,26 @@
+[
+    {
+        "qid": "Q1",
+        "model": "Model A",
+        "text": "This is the first model's answer to question 1",
+        "timestamp": "2025-03-09T10:00:00Z"
+    },
+    {
+        "qid": "Q1",
+        "model": "Model B",
+        "text": "This is the second model's answer to question 1",
+        "timestamp": "2025-03-09T10:05:00Z"
+    },
+    {
+        "qid": "Q2",
+        "model": "Model A",
+        "text": "This is the first model's answer to question 2",
+        "timestamp": "2025-03-09T10:10:00Z"
+    },
+    {
+        "qid": "Q2",
+        "model": "Model B",
+        "text": "This is the second model's answer to question 2",
+        "timestamp": "2025-03-09T10:15:00Z"
+    }
+]
