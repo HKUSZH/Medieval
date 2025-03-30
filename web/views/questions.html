@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Questions</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="pi-profile">
+        <img src="/pi.jpeg" alt="张文智教授">
+        <span>P.I. 张文智教授</span>
+    </div>
+    <div class="dashboard-container">
+        <h1>Manage Questions - <span id="deptName"></span></h1>
+        
+        <div class="section">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2>Questions</h2>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="toggleAllAccordions" style="transform: scale(1.5); margin: 0 10px; width: 60px;">
+                    <label class="form-check-label" for="toggleAllAccordions" style="margin-left: 20px;">展开/关闭所有问题</label>
+                </div>
+            </div>
+            <div class="question-list">
+                <div class="accordion" id="questionsAccordionAdmin">
+                    <!-- Questions will be populated here -->
+                </div>
+            </div>
+            <button onclick="addQuestion()" >Add New Question</button>
+            <style>
+                .accordion-button {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 1rem;
+                }
+                .question-header {
+                    display: flex;
+                    gap: 2rem;
+                }
+                .question-details {
+                    padding: 1rem;
+                    background: #f8f9fa;
+                }
+            </style>
+        </div>
+
+        <button class="back-btn" onclick="goBack()">Back to Dashboard</button>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Add Question Modal -->
+    <div id="addQuestionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Question</h2>
+            <form id="addQuestionForm">
+                <div class="form-group">
+                    <label for="questionText">Question Text 问题（必填）:</label>
+                    <textarea id="questionText" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="answerText">Reference answer 参考答案（选填）:</label>
+                    <textarea id="answerText"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="questionType">Question Type 题型:</label>
+                    <select id="questionType" required>
+                        <option value="OSCE" selected>OSCE</option>
+                        <option value="realCases">Real Cases</option>
+                    </select>
+                </div>
+                <button type="submit" >Add Question</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/questions.js"></script>
+</body>
+</html>

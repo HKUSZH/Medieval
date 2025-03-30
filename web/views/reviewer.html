@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviewer Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* Container for the table */
+        .table-container {
+            width: 100%; /* Ensure the container spans 100% of its parent */
+            /*border: 1px solid #ccc;  Optional: Add a border for visualization */
+            padding: 10px; /* Optional: Add padding */
+            box-sizing: border-box; /* Ensure padding is included in the width */
+        }
+
+        /* Table styling */
+        table {
+            width: 100%; /* Table spans 100% of the container */
+            border-collapse: collapse; /* Remove spacing between cells */
+        }
+
+        /* Table cells */
+        td {
+            padding: 10px; /* Add padding for better spacing */
+            /*border: 1px solid #ddd;  Optional: Add borders for visualization */
+        }
+
+        /* First column left-aligned */
+        td:first-child {
+            text-align: left;
+        }
+
+        /* Second column right-aligned */
+        td:nth-child(2) {
+            text-align: right;
+        }     
+        ul {
+            list-style-type: none; /* Remove default bullets */
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        ul li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }   
+    </style>
+</head>
+<body>
+    <div class="pi-profile">
+        <img src="/pi.jpeg" alt="张文智教授">
+        <span>P.I. 张文智教授</span>
+    </div>
+    <div class="dashboard-container">
+        <h2>Reviewer Dashboard 评委面板</h2>
+        <div class="user-info">
+            <ul>
+                <li>
+                    <table>
+                        <tr>
+                            <td>                        
+                                <p>Welcome, <span id="reviewerName"></span> 主任<br>
+                                    Email: <span id="reviewerEmail"></span><br>
+                                    Department: <span id="reviewerDepartment"></span><br>
+                                    出题人: <span id="reviewerExaminer"></span>
+                                </p>
+                            </td>
+                            <td>
+                                <img id="profilePic" src="user.jpg" style="height:100px">
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>         
+        </div>
+        <div class="user-info">
+            <ul>
+                <li>
+                    《LLM医学能力评估》规则：<br>
+                    分两轮进行
+                    <!--第二步，请对每道题所对应的答案进行评分，包括医学能力（0-10分，10分为最高医学能力）、幻觉（0-5，5分为严重幻觉）。医学能力和幻觉没有必然联系，可以同时能力强，且有幻觉。-->
+                </li>   
+            </ul>
+        </div>
+        <div class="dashboard-buttons">
+            <div class="button-container">
+                <a href="/evalQuestion?email=${new URLSearchParams(window.location.search).get('email')}" class="dashboard-button eval-questions">
+                    <i class="fas fa-question-circle"></i>
+                    <span>第一轮：评估考题本身<br>Eval Questions</span>
+                </a>
+                <a href="/evalAnswer?email=${new URLSearchParams(window.location.search).get('email')}" class="dashboard-button eval-answers">
+                    <i class="fas fa-check-circle"></i>
+                    <span>第二轮：评估LLM答案<br>（本轮已结束，2025.03.25 1900正式解密，同时锁分。点击看答案出处。）</span>
+                </a>
+            </div>
+        </div>
+
+        <button class="logout-btn" onclick="logout()">Logout</button>
+
+        <style>
+            .dashboard-buttons {
+                margin: 2rem 0;
+            }
+            
+            .button-container {
+                display: flex;
+                gap: 2rem;
+                justify-content: center;
+            }
+            
+            .dashboard-button {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 300px;
+                height: 300px;
+                color: white;
+                text-decoration: none;
+                border-radius: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                text-align: center;
+                font-size: 1.8rem;
+                font-weight: bold;
+                position: relative;
+                overflow: hidden;
+                background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border: 1px solid rgba(255,255,255,0.18);
+            }
+            
+            .dashboard-button::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: inherit;
+                z-index: -1;
+                filter: blur(20px);
+            }
+            
+            .dashboard-button:hover {
+                transform: translateY(-5px) scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+            
+            .dashboard-button i {
+                font-size: 4rem;
+                margin-bottom: 1rem;
+                transition: transform 0.3s ease;
+            }
+            
+            .dashboard-button:hover i {
+                transform: scale(1.1);
+            }
+            
+            .eval-questions {
+                background: linear-gradient(135deg, #28a745, #1e7e34);
+            }
+            
+            .eval-questions:hover {
+                background: linear-gradient(135deg, #1e7e34, #28a745);
+            }
+            
+            .eval-answers {
+                background: linear-gradient(135deg, #dc3545, #c82333);
+            }
+            
+            .eval-answers:hover {
+                background: linear-gradient(135deg, #c82333, #dc3545);
+            }
+            
+            .button-container {
+                display: flex;
+                gap: 2rem;
+                justify-content: center;
+                padding: 2rem;
+                background: rgba(255,255,255,0.1);
+                border-radius: 20px;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border: 1px solid rgba(255,255,255,0.18);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </div>
+
+    <script src="/js/reviewer.js"></script>
+    <script src="/js/track.js"></script>
+</body>
+</html>

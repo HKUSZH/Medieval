@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation Questions</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* Container for the table */
+        .table-container {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Table cells */
+        td {
+            padding: 10px;
+        }
+
+        /* First column left-aligned */
+        td:first-child {
+            text-align: left;
+        }
+
+        /* Second column right-aligned */
+        td:nth-child(2) {
+            text-align: right;
+        }     
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        ul li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #6c757d;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="pi-profile">
+        <img src="/pi.jpeg" alt="张文智教授">
+        <span>P.I. 张文智教授</span>
+    </div>
+    <div class="dashboard-container">
+        <h2>Evaluation Questions 第一轮，请评估问题本身。</h2>
+        <div class="user-info">
+            <ul>
+                <li>
+                    <table>
+                        <tr>
+                            <td>                        
+                                <p>Welcome, <span id="reviewerName"></span> 主任<br>
+                                    Email: <span id="reviewerEmail"></span><br>
+                                    Department: <span id="reviewerDepartment"></span><br>
+                                    出题人: <span id="reviewerExaminer"></span>
+                                </p>
+                            </td>
+                            <td>
+                                <img id="profilePic" src="user.png" style="height:100px">
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>         
+        </div>
+        <div class="user-info">
+            <ul>
+                <li>
+                    《LLM医学能力评估》，本轮规则：<br>
+                    1，请先对每道题进行评价，包括：难度、是否涉及罕见病、诊治等<br>
+                    2，本页面自动保存您的输入，无需点击保存<br>
+                    3，本项目P.I.是张文智教授，您的评分也十分关键，请您仔细评价。
+                    <!--第二步，请对每道题所对应的答案进行评分，包括医学能力（0-10分，10分为最高医学能力）、幻觉（0-5，5分为严重幻觉）。医学能力和幻觉没有必然联系，可以同时能力强，且有幻觉。-->
+                </li>   
+            </ul>
+        </div>
+        <div class="section">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2>Questions to Review</h2>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="toggleAllAccordions" style="transform: scale(1.5); margin: 0 10px; width: 60px;">
+                    <label class="form-check-label" for="toggleAllAccordions" style="margin-left: 20px;">展开/关闭所有问题</label>
+                </div>
+            </div>
+            <div class="question-list">
+                <div class="accordion" id="questionsAccordion">
+                    <!-- Questions will be populated here by reviewer.js -->
+                </div>
+            </div>
+        </div>
+
+        <button class="back-button" id="backButton"><<返回评委面板</button>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script src="/js/evalQuestion.js"></script>
+    <script src="/js/track.js"></script>
+</body>
+</html>

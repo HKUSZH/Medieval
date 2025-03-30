@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek Project - Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="pi-profile">
+        <img src="/pi.jpeg" alt="张文智教授">
+        <span>P.I. 张文智教授</span>
+    </div>
+
+    <div class="login-container">
+        <h2 style="text-align: center;">LLM Medical Eval at HKUSZH 大语言模型医能及幻觉测试</h2><br>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script src="/js/login.js"></script>
+    <script src="/js/track.js"></script>
+</body>
+<footer>
+    <p>&copy; 2025 HKU-SZH. All rights reserved.</p>
+    <p>
+        <a href="#">本站由陈培凯设计及开发</a> | 
+        <a href="mailto:pkchen@hku-szh.org">Contact Me</a>
+    </p>
+</footer>
+<style>
+   body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Ensure body and html take full height */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+        }
+    .main-content {
+        flex: 1; /* Takes up remaining space */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f8f9fa;
+    }
+    .login-box {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+    }
+
+    .login-box h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .login-box input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .login-box button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .login-box button:hover {
+        background-color: #0056b3;
+    }
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+    /*footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+        flex-shrink: 0; /* Prevents footer from shrinking */
+   /* }*/
+
+    footer a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+    
+    
+</style>
+</html>

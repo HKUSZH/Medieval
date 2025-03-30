@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="pi-profile">
+        <img src="/pi.jpeg" alt="张文智教授">
+        <span>P.I. 张文智教授</span>
+    </div>
+    <div class="dashboard-container">
+        <h1>Admin Dashboard</h1>
+        
+        <div class="section">
+            <h2>Manage Questions</h2>
+            <div class="department-buttons">
+                <div class="button-grid">
+                    <button class="department-btn" onclick="selectDepartment('急诊')">1.急诊</button>
+                    <button class="department-btn" onclick="selectDepartment('急诊抢救室')">1b.急诊抢救室</button>
+                    <button class="department-btn" onclick="selectDepartment('心内科')">2.心内科</button>
+                    <button class="department-btn" onclick="selectDepartment('心外科')">3.心外科</button>
+                    <button class="department-btn" onclick="selectDepartment('神内科')">4.神内科</button>
+                    <button class="department-btn" onclick="selectDepartment('肾内科')">5.肾内科</button>
+                    <button class="department-btn" onclick="selectDepartment('骨科')">6.骨科</button>
+                    <button class="department-btn" onclick="selectDepartment('ICU重症')">7.ICU重症</button>
+                    <button class="department-btn" onclick="selectDepartment('儿科')">8.儿科</button>
+                    <button class="department-btn" onclick="selectDepartment('产前诊断')">9.产前诊断</button>
+                    <button class="department-btn" onclick="selectDepartment('新生儿科')">10.新生儿科</button>
+                    <button class="department-btn" onclick="selectDepartment('呼吸内科')">11.呼吸内科</button>
+                    <button class="department-btn" onclick="selectDepartment('小儿外科')">12.小儿外科</button>
+                    <button class="department-btn" onclick="selectDepartment('罕见病')">13.罕见病</button>                    
+                    <button class="department-btn" onclick="selectDepartment('全科')">15.全科</button>
+                </div>
+            </div>
+            <div class="question-groups">
+                <!-- Question groups will be populated here -->
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Reports</h2>
+            <div class="reports">
+                <button class="report-btn" onclick="generateRound1Summary()" style="width: 50%; margin-left: 25%;">Generate Summary of Round 1 首轮进度统计</button>
+                <div id="round1Summary" class="summary-table"></div>
+            </div>
+
+            <div class="reports">
+                <button class="report-btn" onclick="generateRound2Summary()" style="width: 50%; margin-left: 25%;">Generate Summary of Round 2 次轮进度统计</button>
+                <div id="round2Summary" class="summary-table"></div>
+            </div>
+        </div>
+
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script src="/js/admin.js"></script>
+    <script src="/js/track.js"></script>
+</body>
+</html>
