@@ -58,7 +58,7 @@ This work was supported by:
 - \[10\] Dept. of Nephrology  
 - \[11\] Dept. of Respiratory Medicine  
 - \[12\] Intensive Care Unit (ICU)  
-- \[13\] Dept. of Cardiologic Surgery  
+- \[13\] Dept. of Cardiac Surgery  
 - \[14\] Dept. of Cardiology  
 - \[15\] Dept. of Pediatric Orthopedics, Children’s Hospital, Zhejiang University School of Medicine  
 - \[16\] Dept. of Orthopedics, PUMCH, Chinese Academy of Medical Sciences
