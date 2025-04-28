@@ -1,4 +1,4 @@
-# A Multi-Disciplinary, Randomized, Single-Blind, Single-Center, Real-Case, Expert Evaluation of SOTA Large Language Models for Their Values and Risks in Medicine
+# An interdisciplinary, randomized, single-blind evaluation of state-of-the-art large language models for their implications and risks in medical diagnosis and management
 
 ## 📄 Abstract
 
