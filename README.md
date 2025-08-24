@@ -1,4 +1,4 @@
-# An interdisciplinary, randomized, single-blind evaluation of state-of-the-art large language models for their implications and risks in medical diagnosis and management
+# Medieval: an interdisciplinary, randomized, single-blind expert-evaluation of large language models for their implications and risks in medical diagnosis and management
 
 ## 📄 Abstract
 
