@@ -75,6 +75,18 @@ All affiliations, unless otherwise noted, are based at **The University of Hong 
 
 ## 🔗 Citation
 
-> Coming soon in preprint and journal publication formats.
+```
+@article {Chen2025.06.20.25326623,
+	author = {Chen, Peikai and Cai, Jifu and Zhou, Jiaying and Chen, Shaoxi and Xu, Chenguang and Yuan, Lihua and Dai, Xiaoying and Chen, Xiaowei and Wei, Yanzhe and Li, Xia and Gong, Shaofeng and Liang, Xiaolong and Yang, Jiancheng and Jin, Jun and Dai, Kanglin and Cui, Yuzhen and Kuang, Guan-Ming and Xie, Jianshen and Luo, Libing and Xiao, Haibing and Yin, Shijie and Yang, Jun and Yan, Yulan and Chen, Jianliang and Chen, Yihua and Zhang, Qianshen and Zhou, Qingshan and Zhao, Lina and Wu, Min and Tang, Xin and Rong, Lei and Wang, Zanxin and Qiu, Weifu and Wang, Yanli and Cui, Liwen and Li, Xiangyang and Hu, Yong and Tao, Huiren and Wu, Nan and David J.H. Shih and Pai, Pearl and Wei, Minxin and To, Michael Kai-tsun and Cheung, Kenneth M.C.},
+	title = {An interdisciplinary, randomized, single-blind evaluation of state-of-the-art large language models for their implications and risks in medical diagnosis and management},
+	elocation-id = {2025.06.20.25326623},
+	year = {2025},
+	doi = {10.1101/2025.06.20.25326623},
+	publisher = {Cold Spring Harbor Laboratory Press},
+	URL = {https://www.medrxiv.org/content/early/2025/06/24/2025.06.20.25326623},
+	eprint = {https://www.medrxiv.org/content/early/2025/06/24/2025.06.20.25326623.full.pdf},
+	journal = {medRxiv}
+}
+```
 
 ---
