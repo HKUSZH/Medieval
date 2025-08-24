@@ -25,6 +25,11 @@ LLMs demonstrated strong capabilities in diagnostic reasoning but underperformed
 This work was supported by:
 - The Sanming Project of Medicine in Shenzhen (SZSM202311022)  
 - The Shenzhen Clinical Research Center for Rare Diseases (LCYSSQ20220823091402005)
+- The Hong Kong University - Shenzhen Hospital Translational Medicine Centre (HZQSWS-KCCYB-2024055)
+
+### Full manuscript  
+Read our full preprint at:
+https://www.medrxiv.org/content/10.1101/2025.06.20.25326623v1
 
 ---
 
@@ -37,7 +42,7 @@ This work was supported by:
 **Jun Yang**, **Yulan Yan**, **Jianliang Chen**, **Yihua Chen**, **Qianshen Zhang**,  
 **Qingshan Zhou**, **Lina Zhao**, **Min Wu**, **Xin Tang**, **Lei Rong**, **Zanxin Wang**,  
 **Weifu Qiu**, **Yanli Wang**, **Liwen Cui**, **Xiangyang Li**, **Minxin Wei**,  
-**Yong Hu**, **Huiren Tao**, **Nan Wu**, **Pearl Pai**, **Michael Kai-tsun To†**, **Kenneth M.C. Cheung†**
+**Yong Hu**, **Huiren Tao**, **Nan Wu**, **David J.H. Shih**, **Pearl Pai**, **Michael Kai-tsun To†**, **Kenneth M.C. Cheung†**
 
 \* These authors contributed equally  
 † Corresponding authors
@@ -62,7 +67,8 @@ This work was supported by:
 - \[14\] Dept. of Cardiology  
 - \[15\] Dept. of Pediatric Orthopedics, Children’s Hospital, Zhejiang University School of Medicine  
 - \[16\] Dept. of Orthopedics, PUMCH, Chinese Academy of Medical Sciences
-
+- \[17\] School of Biomedical Sciences, The University of Hong Kong, Pokfulam, H.K. SAR, China
+  
 All affiliations, unless otherwise noted, are based at **The University of Hong Kong - Shenzhen Hospital (HKU-SZH), Shenzhen, China.**
 
 ---
