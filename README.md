@@ -2,24 +2,20 @@
 
 ## 📄 Abstract
 
-### Background  
-State-of-the-art (SOTA) large language models (LLMs) have demonstrated strong performance in fields such as mathematics and computer science. However, their medical proficiency remains underexplored due to the complexity of clinical contexts and lack of rigorous evaluation frameworks.
+### Importance:
+Despite efforts to benchmark large language models (LLMs), direct clinical uses of LLMs remain controversial. Rigorous evaluation by medical expert panels can help assess the risks and benefits of LLMs in the clinical setting, but methodological development for such purposes remain lacking.
+### Objective:
+To assess the capability of LLM to perform diagnosis and treatment planning for clinical cases under a multi-disciplinary, randomized, and blinded expert evaluation framework.
+### Design, Setting, and Participants:
+We designed a diverse set of 685 real and simulated clinical cases across 13 specialties and prompted LLMs with these cases. We developed a web-based system for experts to rate the LLM responses in a randomized and blinded manner from March 8 to 31, 2025. Our expert panel consisted of 27 clinicians with an average of 25.9 years of clinical experience.
+### Main Outcomes and Measures:
+An expert panel rated the diagnoses and treatment plans of each LLM using a scoring system designed to assess the quality of the LLM responses equivalent to that of human physicians at various career stages.
+### Results:
+LLM response ratings (n = 9856) by individual experts are heterogeneous but the averaged ratings have excellent reliability (intraclass correlation coefficients >0.9). The LLM responses to clinical cases were rated on average to be equivalent to attending physicians in the Chinese medical system; however, the LLM responses were often rated to be equivalent to fresh medical graduates or worse (3-19%). Additionally, 40 instances of LLM hallucination were identified, and these involve fabricated clinical conditions, inappropriate medical prescriptions, and severe diagnostic errors.
 
-### Methods  
-We conducted a randomized, single-blind, single-center study in which 27 specialty experts (associate consultant level or above) evaluated the medical performance of seven LLMs across **685 questions** — a balanced mix of simulated OSCE-style and real clinical cases (48.9% real), drawn from **13 medical disciplines**.  
-Experts assessed:
-- **Medical strength** (0–10 scale: 0 = no knowledge, >9.5 = leading expert)
-- **Hallucinations** (0–5 scale: 1 point per fabricated element)
+### Conclusions and Relevance:
+While LLMs show substantial values in enhancing operational efficiency, their unguarded clinical application could present serious risks. Human expert oversight remains crucial. Larger, multi-center studies are warranted to assess their real-world performance, and the clinical adoption of LLMs must be continuously monitored by expert panels. The evaluation framework developed and validated in this study will facilitate efforts to assess and monitor the clinical application of LLMs.
 
-Models were assessed via a custom-designed, anonymized web interface. Evaluator responses were subject to exclusion criteria for rushed (<2 hours), incomplete (<95%), or repetitive (>20% same-score) submissions. Analysis was performed using multiple linear regression and linear mixed-effects models, with response length included as a covariate.
-
-### Findings  
-- **Gemini 2.0 Flash** achieved the highest raw scores but produced notably longer responses.  
-- **DeepSeek R1** outperformed others when adjusted for length, ranking highest in both rank-based and mixed-model analyses.  
-- As of March 2025, the best-performing models matched the proficiency of senior attending physicians in multiple specialties, with low incidence of hallucinations.
-
-### Interpretation  
-LLMs demonstrated strong capabilities in diagnostic reasoning but underperformed in sequential and spatial reasoning tasks. While promising for clinical use, deployment in real-world medical contexts should be approached with caution.
 
 ### Funding  
 This work was supported by:
