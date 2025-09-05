@@ -1,9 +1,9 @@
-# 单个问题存储
+# 单个 问题存储
 from openai import OpenAI
 import json
 import os
 
-# 钟程专用
+# 钟专用
 # 0 初始化 Qwen 客户端
 client = OpenAI(
     api_key="sk-4360fb70a37d474**********ad593be",
