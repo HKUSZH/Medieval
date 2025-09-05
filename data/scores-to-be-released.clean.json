@@ -3,7 +3,7 @@
     "02WPKQ-R17": [
       {
         "user": "GMK_ortho",
-        "strength": 5,
+        "strength" : 5,
         "hallucination": null,
         "halluText": ""
       },
