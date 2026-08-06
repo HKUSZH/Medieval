@@ -441,9 +441,12 @@ fit.summary <- summary(fit, ddf = "Satterthwaite");
 coefs <- fit.summary$coefficients;
 coefs <- coefs[grep("model", rownames(coefs)), ];
 
-alpha <- 0.20;
-t.mult <- qt(p = 1 - alpha/2, df = coefs[, "df"]);
+#alpha <- 0.20;
+#t.mult <- qt(p = 1 - alpha/2, df = coefs[, "df"]);
+t.mult1 <- qt(p = 1 - 0.20/2, df = coefs[, "df"]);
+t.mult2 <- qt(p = 1 - 0.05/2, df = coefs[, "df"]);
 
+t.mult<-t.mult2
 model.coefs <- data.frame(
   model = sub("model", "", rownames(coefs)),
   estimate = coefs[, 1],
@@ -451,6 +454,16 @@ model.coefs <- data.frame(
   lower = coefs[, 1] + t.mult * coefs[, 2],
   upper = coefs[, 1] - t.mult * coefs[, 2]
 );
+
+ord1<-order(model.coefs[, "estimate"])
+bpp<-barplot(model.coefs[ord1, "estimate"])[,1]
+for(i in 1:length(bpp)){
+	x1<-bpp[i]
+	x2<-bpp[i]
+	y1<-model.coefs[ord1, "lower"][i]
+	y2<-model.coefs[ord1, "upper"][i]
+	lines(c(x1,x2), c(y1,y2), xpd=T)
+}
 
 write.table(model.coefs, "adjusted-model-scores.csv", sep=",", row.names=FALSE);
 
